@@ -7,13 +7,19 @@ public class Valuta {
 	public String getNaziv() {
 		return naziv;
 	}
-	public void setNaziv(String naziv) {
+	public void setNaziv(String naziv) throws Exception {
+		if(naziv==null) {
+			throw new Exception("Naziv ne sme biti null");
+		}
 		this.naziv = naziv;
 	}
 	public String getSkraceniNaziv() {
 		return skraceniNaziv;
 	}
-	public void setSkraceniNaziv(String skraceniNaziv) {
+	public void setSkraceniNaziv(String skraceniNaziv) throws Exception{
+		if(skraceniNaziv==null) {
+			throw new Exception("Skraceni naziv ne sme biti null");
+		}
 		this.skraceniNaziv = skraceniNaziv;
 	}
 	@Override

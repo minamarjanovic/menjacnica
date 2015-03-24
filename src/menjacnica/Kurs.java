@@ -11,31 +11,47 @@ public class Kurs {
 	public double getProdajniKurs() {
 		return prodajniKurs;
 	}
-	public void setProdajniKurs(double prodajniKurs) {
+	public void setProdajniKurs(double prodajniKurs) throws Exception {
+		if(prodajniKurs==0) {
+		throw new Exception("Kurs ne sme biti nula");
+	}
+		
 		this.prodajniKurs = prodajniKurs;
 	}
 	public double getSrednjiKurs() {
 		return srednjiKurs;
 	}
-	public void setSrednjiKurs(double srednjiKurs) {
+	public void setSrednjiKurs(double srednjiKurs) throws Exception{
+		if(srednjiKurs==0) {
+			throw new Exception("Kurs ne sme biti nula");
+		}
 		this.srednjiKurs = srednjiKurs;
 	}
 	public double getKupovniKurs() {
 		return kupovniKurs;
 	}
-	public void setKupovniKurs(double kupovniKurs) {
+	public void setKupovniKurs(double kupovniKurs) throws Exception {
+		if(kupovniKurs==0) {
+			throw new Exception("Kurs ne sme biti nula");
+		}
 		this.kupovniKurs = kupovniKurs;
 	}
 	public GregorianCalendar getDatum() {
 		return datum;
 	}
-	public void setDatum(GregorianCalendar datum) {
+	public void setDatum(GregorianCalendar datum) throws Exception {
+		if(datum.before(new GregorianCalendar())) {
+			throw new Exception("Datum koji se unosi mora biti nakon sadasnjeg trenutka.");
+		}
 		this.datum = datum;
 	}
 	public LinkedList<Valuta> getValute() {
 		return valute;
 	}
-	public void setValute(LinkedList<Valuta> valute) {
+	public void setValute(LinkedList<Valuta> valute) throws Exception {
+		if(valute.isEmpty()) {
+			throw new Exception("Lista valute ne sme biti prazna");
+		}
 		this.valute = valute;
 	}
 	@Override
