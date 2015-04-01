@@ -12,10 +12,10 @@ public class Menjacnica implements menjacnicaInterfejs {
 	@Override
 	public void dodajKurs(Kurs kurs) {
 		if (kurs == null)
-			throw new RuntimeException("Kurs ne sme biti null");
+			throw new RuntimeException("Kurs ne sme biti null.");
 		
 		if (kursevi.contains(kurs))
-			throw new RuntimeException("Kurs postoji");
+			throw new RuntimeException("Kurs vec postoji.");
 		
 		kursevi.add(kurs);	
 
