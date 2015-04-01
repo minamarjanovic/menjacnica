@@ -17,8 +17,7 @@ public class Menjacnica implements menjacnicaInterfejs {
 		if (kursevi.contains(kurs))
 			throw new RuntimeException("Kurs postoji");
 		
-		kursevi.add(kurs);
-		
+		kursevi.add(kurs);	
 
 	}
 

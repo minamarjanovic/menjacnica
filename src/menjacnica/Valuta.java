@@ -4,29 +4,35 @@ public class Valuta {
 
 	private String naziv;
 	private String skraceniNaziv;
+	
 	public String getNaziv() {
 		return naziv;
 	}
-	public void setNaziv(String naziv) throws Exception {
-		if(naziv==null) {
-			throw new Exception("Naziv ne sme biti null");
+	
+	public void setNaziv(String naziv) {
+		if(naziv == null) {
+			throw new RuntimeException("Naziv ne sme biti null");
 		}
 		this.naziv = naziv;
 	}
+	
 	public String getSkraceniNaziv() {
 		return skraceniNaziv;
 	}
-	public void setSkraceniNaziv(String skraceniNaziv) throws Exception{
-		if(skraceniNaziv==null) {
-			throw new Exception("Skraceni naziv ne sme biti null");
+	
+	public void setSkraceniNaziv(String skraceniNaziv) {
+		if(skraceniNaziv == null) {
+			throw new RuntimeException("Skraceni naziv ne sme biti null");
 		}
 		this.skraceniNaziv = skraceniNaziv;
 	}
+	
 	@Override
 	public String toString() {
 		return "Valuta [naziv=" + naziv + ", skraceniNaziv=" + skraceniNaziv
 				+ "]";
 	}
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -36,6 +42,7 @@ public class Valuta {
 				+ ((skraceniNaziv == null) ? 0 : skraceniNaziv.hashCode());
 		return result;
 	}
+	
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)

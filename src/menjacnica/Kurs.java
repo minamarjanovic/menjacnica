@@ -6,54 +6,66 @@ import java.util.LinkedList;
 public class Kurs {
 
 	private double prodajniKurs, srednjiKurs, kupovniKurs;
+	
 	private GregorianCalendar datum;
+	
 	private LinkedList<Valuta> valute = new LinkedList<Valuta>();
+	
 	public double getProdajniKurs() {
 		return prodajniKurs;
 	}
-	public void setProdajniKurs(double prodajniKurs) throws Exception {
-		if(prodajniKurs==0) {
-		throw new Exception("Kurs ne sme biti nula");
+	
+	public void setProdajniKurs(double prodajniKurs) {
+		if(prodajniKurs == 0) {
+		throw new RuntimeException("Prodajni kurs ne sme biti nula");
 	}
-		
 		this.prodajniKurs = prodajniKurs;
 	}
+	
 	public double getSrednjiKurs() {
 		return srednjiKurs;
 	}
-	public void setSrednjiKurs(double srednjiKurs) throws Exception{
-		if(srednjiKurs==0) {
-			throw new Exception("Kurs ne sme biti nula");
+	
+	public void setSrednjiKurs(double srednjiKurs) {
+		if(srednjiKurs == 0) {
+			throw new RuntimeException("Srednji kurs ne sme biti nula");
 		}
 		this.srednjiKurs = srednjiKurs;
 	}
+	
 	public double getKupovniKurs() {
 		return kupovniKurs;
 	}
-	public void setKupovniKurs(double kupovniKurs) throws Exception {
-		if(kupovniKurs==0) {
-			throw new Exception("Kurs ne sme biti nula");
+	
+	public void setKupovniKurs(double kupovniKurs) {
+		if(kupovniKurs == 0) {
+			throw new RuntimeException("Kupovni kurs ne sme biti nula");
 		}
 		this.kupovniKurs = kupovniKurs;
 	}
+	
 	public GregorianCalendar getDatum() {
 		return datum;
 	}
-	public void setDatum(GregorianCalendar datum) throws Exception {
-		if(datum.before(new GregorianCalendar())) {
-			throw new Exception("Datum koji se unosi mora biti nakon sadasnjeg trenutka.");
+	
+	public void setDatum(GregorianCalendar datum) {
+		if(datum == null) {
+			throw new RuntimeException("Datum ne sme biti null.");
 		}
 		this.datum = datum;
 	}
+	
 	public LinkedList<Valuta> getValute() {
 		return valute;
 	}
-	public void setValute(LinkedList<Valuta> valute) throws Exception {
+	
+	public void setValute(LinkedList<Valuta> valute) {
 		if(valute.isEmpty()) {
-			throw new Exception("Lista valute ne sme biti prazna");
+			throw new RuntimeException("Lista valuta ne sme biti prazna.");
 		}
 		this.valute = valute;
 	}
+	
 	@Override
 	public String toString() {
 		return "Kurs [prodajniKurs=" + prodajniKurs + ", srednjiKurs="
